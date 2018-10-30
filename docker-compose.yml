@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+
+  web:
+    image: custom-php
+    build:
+      context: ./custom-php
+    environment:
+     - APACHE_RUN_USER=daemon
+    ports:
+     - 8000:80
+    volumes:
+     - ./src:/var/www/html
